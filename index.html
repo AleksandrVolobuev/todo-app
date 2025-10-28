@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Мої завдання</h1>
+    
+    <div class="tabs">
+      <button class="tab active" data-tab="day-content">День</button>
+      <button class="tab" data-tab="week-content">Тиждень</button>
+      <button class="tab" data-tab="month-content">Місяць</button>
+    </div>
+
+    <!-- День -->
+    <div id="day-content" class="tab-content" style="display: block;">
+      <div class="header">
+        <h2>Завдання на день</h2>
+        <button id="day-add" class="btn-add">+ Додати</button>
+      </div>
+      <div id="day-tasks" class="tasks-list"></div>
+    </div>
+
+    <!-- Тиждень -->
+    <div id="week-content" class="tab-content" style="display: none;">
+      <div class="header">
+        <h2>Завдання на тиждень</h2>
+        <button id="week-add" class="btn-add">+ Додати</button>
+      </div>
+      <div id="week-tasks" class="tasks-list"></div>
+    </div>
+
+    <!-- Місяць -->
+    <div id="month-content" class="tab-content" style="display: none;">
+      <div class="header">
+        <h2>Завдання на місяць</h2>
+        <button id="month-add" class="btn-add">+ Додати</button>
+      </div>
+      <div id="month-tasks" class="tasks-list"></div>
+    </div>
+
+    <!-- Модальне вікно для додавання/редагування -->
+    <div id="modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h3 id="modal-title">Додати завдання</h3>
+        <input type="text" id="task-input" placeholder="Введіть завдання..." />
+        <div class="modal-buttons">
+          <button id="modal-save" class="btn-save">Зберегти</button>
+          <button id="modal-cancel" class="btn-cancel">Скасувати</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/js/renderer.js"></script>
+</body>
+</html>
