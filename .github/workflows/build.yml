@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - build-distributiv
+    tags:
+      - 'v*'  
   workflow_dispatch:
 
 jobs:
@@ -46,6 +48,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - name: Download build artifacts
