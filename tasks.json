@@ -1,32 +1,5 @@
 {
-  "day": [
-    {
-      "text": "azsfasfas",
-      "completed": false
-    },
-    {
-      "text": "фывфывфыв",
-      "completed": false,
-      "date": "2025-10-02"
-    },
-    {
-      "text": "фыавфыа",
-      "completed": false,
-      "date": "2025-10-29"
-    }
-  ],
-  "week": [
-    {
-      "text": "ыфууавыфаыв",
-      "completed": false,
-      "date": "2025-10-01"
-    }
-  ],
-  "month": [
-    {
-      "text": "фывфывфы",
-      "completed": false,
-      "date": "2025-10-10"
-    }
-  ]
+  "day": [],
+  "week": [],
+  "month": []
 }
