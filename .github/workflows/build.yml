@@ -13,10 +13,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        fail-fast: false  # <-- Linux не отменяется, если Windows падает
 
     steps:
       - uses: actions/checkout@v3
