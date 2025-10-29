@@ -78,6 +78,64 @@ body {
   border: 1px solid var(--border-primary);
 }
 
+/* Панель управления */
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  padding: 8px 16px;
+  background: var(--bg-button);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.lang-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-secondary);
+}
+
+.lang-btn.active {
+  background: var(--gradient-button);
+  color: var(--color-darkest);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-exit {
+  padding: 8px 20px;
+  background: rgba(220, 53, 69, 0.3);
+  color: var(--text-primary);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-exit:hover {
+  background: var(--color-error);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
 h1 {
   text-align: center;
   color: var(--text-primary);
