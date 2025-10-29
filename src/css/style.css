@@ -94,6 +94,7 @@ body {
 }
 
 .lang-btn {
+  font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
   padding: 8px 16px;
   background: var(--bg-button);
   color: var(--text-primary);
