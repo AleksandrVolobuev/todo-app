@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Простое To-Do приложение на Electron с мультиязычной поддержкой",
   "main": "main.js",
-  "author": "Александр Волобуев",
+  "author": {
+    "name": "Александр Волобуев",
+    "email": "alek@example.com"
+  },
   "license": "ISC",
   "scripts": {
     "start": "electron .",
@@ -47,7 +50,10 @@
       "artifactName": "${productName}-Setup-${version}.exe"
     },
     "linux": {
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "icon": "assets/images/icon.png",
       "category": "Utility",
       "artifactName": "${productName}-${version}.${ext}"
