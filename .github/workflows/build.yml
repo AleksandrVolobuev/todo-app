@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - build-distributiv
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -28,20 +30,13 @@ jobs:
         run: npm ci
 
       - name: Build Electron app
-        run: |
-          npm run build || echo "No build script, skipping..."
-          npx electron-builder --${{ matrix.os == 'windows-latest' && 'win' || 'linux' }} --publish never
+        run: npm run dist
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: electron-build-${{ matrix.os }}
-          path: |
-            dist/*.exe
-            dist/*.AppImage
-            dist/*.deb
-            dist/*.zip
-            dist/*.tar.gz
+          path: dist/**
 
   release:
     needs: build
