@@ -1,16 +1,58 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
+  "description": "Простое To-Do приложение на Electron с мультиязычной поддержкой",
   "main": "main.js",
+  "author": "Александр Волобуев",
+  "license": "ISC",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "electron": "^31.7.7"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.alek.todoapp",
+    "productName": "TodoApp",
+    "asar": true,
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "tasks.json",
+      "src/**/*",
+      "locales/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets/images"
+    },
+    "extraResources": [
+      {
+        "from": "tasks.json",
+        "to": "tasks.json"
+      },
+      {
+        "from": "locales/",
+        "to": "locales/"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/images/icon.ico",
+      "artifactName": "${productName}-Setup-${version}.exe"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/images/icon.png",
+      "category": "Utility",
+      "artifactName": "${productName}-${version}.${ext}"
+    }
   }
 }
